@@ -31,3 +31,18 @@ $animationItems.map((e) => {
   observer.observe(e);
 });
 
+const colors = [
+  ['#FFC0CB', '#ADD8E6', '#98FB98'],
+  ['#E0BBE4', '#FFDAC1', '#E2F0CB'],
+  ['#F7D1E0', '#C7CEEA', '#F6E6E7']
+];
+
+const gradientArea = document.querySelector('.bg-gradient');
+
+function changeGradient() {
+  const colorSet = colors[Math.floor(Math.random() * colors.length)];
+  gradientArea.style.backgroundImage = `linear-gradient(135deg, ${colorSet[0]}, ${colorSet[1]}, ${colorSet[2]})`;
+}
+
+setInterval(changeGradient, 5000); // 5秒ごとにグラデーションを変更
+changeGradient(); // 最初のグラデーションを設定
